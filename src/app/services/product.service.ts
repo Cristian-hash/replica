@@ -9,7 +9,7 @@ import { Product } from '../models/product.model';
 export class ProductService {
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<Product> {
-    return;
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>('/assets/productos.json');
   }
 }
