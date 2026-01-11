@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './products-component.html',
   styleUrl: './products-component.css',
 })
-export class ProductsComponent {}
+export class ProductsComponent {
+  constructor(private productService: ProductService) {}
+
+  ngOnInit() {
+    this.productService.getProducts().suscribe((product) => {
+      this.product = product;
+    });
+  }
+}
