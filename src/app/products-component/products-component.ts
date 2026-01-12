@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { ProductService } from '../services/product.service';
+import { Product } from '../models/product.model';
 @Component({
   selector: 'app-products',
   imports: [],
@@ -7,11 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './products-component.css',
 })
 export class ProductsComponent {
+  products: Product[] = [];
+
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getProducts().suscribe((product) => {
-      this.product = product;
+    this.productService.getProducts().subscribe((products) => {
+      this.products = products;
     });
   }
 }
