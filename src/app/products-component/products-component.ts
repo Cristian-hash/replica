@@ -22,3 +22,4 @@ export class ProductsComponent implements OnInit {
     });
   }
 }
+//ojo entonces seria corregir este componente.
