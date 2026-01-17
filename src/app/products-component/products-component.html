@@ -1,1 +1,11 @@
-<p>products-component works!</p>
+<h1>Lista de productos</h1>
+<ul *ngIf="products.length > 0; else noProducts">
+  <li *ngFor="let product of products">
+    <Strong>{{ product.name }}</Strong
+    >-S/.{{ product.price }}
+  </li>
+</ul>
+
+<ng-template #noProducts>
+  <p>No hay productos disponibles.</p>
+</ng-template>
