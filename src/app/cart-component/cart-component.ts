@@ -12,9 +12,11 @@ import { CommonModule } from '@angular/common';
 })
 export class CartComponent implements OnInit {
   items: Product[] = [];
+  total: number = 0;
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
+    this.total = this.cartService.getTotal();
   }
 }
