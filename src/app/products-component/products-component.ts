@@ -3,10 +3,11 @@ import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product.model';
 import { CommonModule } from '@angular/common';
+import { ItemProductComponent } from '../item-product-component/item-product-component';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ItemProductComponent],
   templateUrl: './products-component.html',
   styleUrl: './products-component.css',
 })
@@ -26,6 +27,10 @@ export class ProductsComponent implements OnInit {
     this.productService.getProducts().subscribe((products) => {
       this.products = products;
     });
+  }
+  addToCart(product: Product) {
+    this.cartService.add(product);
+    console.log('Agregado al carrito:', product);
   }
 }
 //ojo entonces seria corregir este componente.
