@@ -1,1 +1,7 @@
-<p>cart-component works!</p>
+<h2>Carrito</h2>
+
+<ul>
+  <li *ngFor="let item of items">{{ item.name }} - S/.{{ item.price }} ></li>
+</ul>
+
+<p>Total: S/. {{ total }}</p>

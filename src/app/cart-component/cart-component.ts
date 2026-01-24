@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-cart-component',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cart-component.html',
   styleUrl: './cart-component.css',
 })
