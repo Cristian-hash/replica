@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../services/cart.service';
-import { ProductService } from '../services/product.service';
+
 import { Product } from '../models/product.model';
-import { CommonModule } from '@angular/common';
+import { ProductService } from '../services/product.service';
+import { CartService } from '../services/cart.service';
+
 import { ItemProductComponent } from '../item-product-component/item-product-component';
+
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -30,7 +34,7 @@ export class ProductsComponent implements OnInit {
   }
   addToCart(product: Product) {
     this.cartService.add(product);
-    console.log('Agregado al carrito:', product);
+    //console.log('Agregado al carrito:', product);
   }
 }
 //ojo entonces seria corregir este componente.
