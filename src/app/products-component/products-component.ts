@@ -37,4 +37,3 @@ export class ProductsComponent implements OnInit {
     //console.log('Agregado al carrito:', product);
   }
 }
-//ojo entonces seria corregir este componente.
